@@ -2,6 +2,9 @@
 
 PRAMAAN is a blockchain-based certificate issuance and verification platform that uses **Ethereum blockchain technology** to create tamper-resistant and independently verifiable academic certificate records.
 
+🌐 **Live Application:**  
+https://pramaan-dapp.vercel.app/
+
 The system allows an authorized issuer to issue a certificate by storing its essential information on the blockchain. A certificate can then be verified using its unique Certificate ID, allowing the stored blockchain record to be retrieved and displayed.
 
 ---
