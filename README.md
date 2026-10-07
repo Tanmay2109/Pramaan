@@ -143,7 +143,6 @@ The function returns:
 
 ### Certificate Issuance
 
-```text
 Issuer
    │
    ▼
