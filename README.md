@@ -1,8 +1,74 @@
-Yes — the problem is that the Markdown is being rendered as mostly plain text because the headings, tables, lists, and code blocks aren't consistently formatted.
+# PRAMAAN — Blockchain-Based Certificate Verification System
 
-Use this **complete replacement** for that section of your `README.md`. It will look much cleaner on GitHub while keeping your actual project information unchanged.
+PRAMAAN is a blockchain-based certificate issuance and verification platform that uses **Ethereum blockchain technology** to create tamper-resistant and independently verifiable academic certificate records.
 
-```markdown
+The system allows an authorized issuer to issue a certificate by storing its essential information on the blockchain. A certificate can then be verified using its unique Certificate ID, allowing the stored blockchain record to be retrieved and displayed.
+
+---
+
+## 📌 Project Overview
+
+Traditional academic certificates are generally verified through manual processes or centralized databases. These approaches can be time-consuming and may be vulnerable to document tampering, duplication, or unauthorized modification.
+
+PRAMAAN addresses this problem by using a **smart contract deployed on the Ethereum Sepolia Test Network**.
+
+The application provides two primary blockchain operations:
+
+- **Certificate Issuance** — Records certificate information on the blockchain.
+- **Certificate Verification** — Retrieves and verifies certificate information using the Certificate ID.
+
+Because the certificate record is stored on the blockchain, the information can be independently checked without relying solely on a centralized verification system.
+
+---
+
+## ✨ Features
+
+### 🔐 Blockchain-Based Certificate Issuance
+
+Authorized issuers can enter:
+
+- Student Name
+- Program
+- Institution
+- Certificate ID
+
+The information is submitted to the deployed smart contract through MetaMask.
+
+### 🔎 Certificate Verification
+
+Users can enter a Certificate ID to retrieve the corresponding certificate information from the blockchain.
+
+The verification result contains:
+
+- Certificate ID
+- Student Name
+- Program
+- Institution
+- Issuer Wallet Address
+- Issue Date
+- Blockchain verification status
+
+### 🦊 MetaMask Integration
+
+PRAMAAN connects to the user's MetaMask wallet for blockchain transactions.
+
+The connected wallet is used as the certificate issuer when issuing a certificate.
+
+### ⛓️ Ethereum Sepolia Test Network
+
+The smart contract is deployed on the Ethereum Sepolia Test Network for development, testing, and demonstration purposes.
+
+### 🎓 Academic Certificate Support
+
+The application is designed to support academic credentials such as:
+
+- B.Tech certificates
+- Academic achievements
+- Course completion certificates
+- Institutional credentials
+
+---
+
 ## 🏗️ System Architecture
 
 ```text
@@ -143,6 +209,7 @@ The function returns:
 
 ### Certificate Issuance
 
+```text
 Issuer
    │
    ▼
@@ -253,7 +320,7 @@ pramaan/
 
 Make sure the following are installed:
 
-- [Node.js](https://nodejs.org/)
+- Node.js
 - npm
 - Git
 - MetaMask
@@ -324,7 +391,7 @@ If no record exists for the entered Certificate ID, the certificate should not b
 
 ## 🧪 Testing
 
-The application can be tested using the following workflow:
+The application can be tested using the following workflow.
 
 ### 1. Wallet Connection
 
@@ -354,9 +421,10 @@ Enter a Certificate ID that has not been issued and verify that no valid certifi
 
 ## 🌐 Smart Contract Explorer
 
-The deployed PRAMAAN smart contract can be viewed on **Sepolia Etherscan**:
+The deployed PRAMAAN smart contract can be viewed on Sepolia Etherscan.
 
-[View PRAMAAN Smart Contract](https://sepolia.etherscan.io/address/0x0dA728eaf42C00A6238b77D3203f2DDbAB566ee5)
+**Contract:**  
+https://sepolia.etherscan.io/address/0x0dA728eaf42C00A6238b77D3203f2DDbAB566ee5
 
 ---
 
@@ -382,23 +450,6 @@ npm run preview
 
 ---
 
-## 🔮 Future Scope
-
-The PRAMAAN platform can be extended with:
-
-- QR-code based certificate verification
-- Digital certificate generation
-- IPFS-based certificate document storage
-- Certificate revocation
-- Multiple institutional issuers
-- Role-based issuer authentication
-- Batch certificate issuance
-- Public verification links
-- Institutional administration dashboard
-- Mobile application
-- Production blockchain deployment
-
----
 
 ## 🎯 Project Objective
 
@@ -410,5 +461,6 @@ The system aims to reduce manual verification processes, improve the reliability
 
 ## 📄 License
 
-This project is licensed under the **MIT License**. See the [`LICENSE`](LICENSE) file for more information.
-```
+This project is licensed under the **MIT License**.
+
+See the [`LICENSE`](LICENSE) file for more information.
