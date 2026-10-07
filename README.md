@@ -1,16 +1,106 @@
-# React + Vite
+# PRAMAAN — Blockchain-Based Certificate Verification System
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+PRAMAAN is a decentralized certificate issuance and verification platform that uses **Ethereum blockchain technology** to create tamper-resistant and independently verifiable academic certificate records.
 
-Currently, two official plugins are available:
+The system allows an authorized issuer to issue a certificate by storing its essential information on the blockchain. A certificate can then be verified using its unique Certificate ID, allowing the stored blockchain record to be retrieved and displayed.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## 📌 Project Overview
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Traditional academic certificates are generally verified through manual processes or centralized databases. These approaches can be time-consuming and may be vulnerable to document tampering, duplication, or unauthorized modification.
 
-## Expanding the ESLint configuration
+PRAMAAN addresses this problem by using a **smart contract deployed on the Ethereum Sepolia Test Network**.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+The application provides two primary blockchain operations:
+
+- **Certificate Issuance** — Records certificate information on the blockchain.
+- **Certificate Verification** — Retrieves and verifies certificate information using the Certificate ID.
+
+Because the certificate record is stored on the blockchain, the information can be independently checked without relying solely on a centralized verification system.
+
+---
+
+## ✨ Features
+
+### 🔐 Blockchain-Based Certificate Issuance
+
+Authorized issuers can enter:
+
+- Student Name
+- Program
+- Institution
+- Certificate ID
+
+The information is submitted to the deployed smart contract through MetaMask.
+
+### 🔎 Certificate Verification
+
+Users can enter a Certificate ID to retrieve the corresponding certificate information from the blockchain.
+
+The verification result displays:
+
+- Certificate ID
+- Student Name
+- Program
+- Institution
+- Issuer Wallet Address
+- Issue Date
+- Blockchain verification status
+
+### 🦊 MetaMask Integration
+
+PRAMAAN connects to the user's MetaMask wallet for blockchain transactions.
+
+The application uses the connected wallet as the certificate issuer.
+
+### ⛓️ Ethereum Sepolia Test Network
+
+The smart contract is deployed on the Ethereum Sepolia Test Network for development and demonstration purposes.
+
+### 🎓 Academic Certificate Support
+
+The application is designed for academic credentials such as:
+
+- B.Tech certificates
+- Academic achievements
+- Course completion certificates
+- Institutional credentials
+
+---
+
+# 🏗️ System Architecture
+
+```text
+                    ┌─────────────────────┐
+                    │       User          │
+                    │   Web Application   │
+                    └──────────┬──────────┘
+                               │
+                               ▼
+                    ┌─────────────────────┐
+                    │       PRAMAAN       │
+                    │    React + Vite     │
+                    └──────────┬──────────┘
+                               │
+                               ▼
+                    ┌─────────────────────┐
+                    │      MetaMask       │
+                    │    Wallet Provider  │
+                    └──────────┬──────────┘
+                               │
+                               ▼
+                    ┌─────────────────────┐
+                    │  Ethereum Sepolia   │
+                    │    Test Network     │
+                    └──────────┬──────────┘
+                               │
+                               ▼
+                    ┌─────────────────────┐
+                    │  PRAMAAN Smart      │
+                    │      Contract       │
+                    └──────────┬──────────┘
+                               │
+                    ┌──────────┴──────────┐
+                    ▼                     ▼
+             Issue Certificate      Verify Certificate
